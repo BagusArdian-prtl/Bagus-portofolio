@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website | Portfolio</title>
+  <title>Bagus Ardianto | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -67,79 +67,99 @@
       padding: 80px 20px;
       max-width: 1000px;
       margin: auto;
-      animation: fadeIn 1s ease;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease forwards;
     }
-    .hero {
-      text-align: center;
-      background: linear-gradient(to right, #1e3b66, #0e1c36);
-      color: white;
-      padding: 100px 20px 60px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      margin-top: 30px;
-      animation: slideUp 1s ease;
-    }
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .hero img {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 20px;
-      border: 4px solid white;
-      box-shadow: var(--shadow);
-    }
-    .hero h2 { font-size: 32px; margin-bottom: 10px; }
-    .hero p { font-size: 18px; margin-bottom: 30px; }
-    .buttons a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 24px;
-      border-radius: var(--radius);
-      background: var(--accent);
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background 0.3s;
-    }
-    .buttons a:hover { background: #0e78d8; }
-    .card {
-      background: var(--bg-card);
-      border-radius: var(--radius);
-      padding: 40px;
-      margin-bottom: 40px;
-      box-shadow: var(--shadow);
-      transition: background 0.3s;
-    }
-    body.dark .card { background: #2a2e36; }
-    h3 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: var(--primary);
-    }
-    body.dark h3 { color: var(--accent); }
-    ul li { margin-bottom: 10px; }
-    footer {
-      text-align: center;
-      background: var(--primary);
-      color: white;
-      padding: 30px;
-      margin-top: 40px;
-    }
-    a { color: var(--accent); }
-    @media (max-width: 768px) {
-      header h1 { width: 100%; margin-bottom: 10px; text-align: center; }
-      nav { justify-content: center; gap: 8px; }
-      .hero h2 { font-size: 24px; }
-      .hero p { font-size: 16px; }
-    }
+    .fade-in:nth-child(1) { animation-delay: 0.3s; }
+    .fade-in:nth-child(2) { animation-delay: 0.6s; }
+    .fade-in:nth-child(3) { animation-delay: 0.9s; }@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero {
+  text-align: center;
+  background: linear-gradient(to right, #1e3b66, #0e1c36);
+  color: white;
+  padding: 100px 20px 60px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-top: 30px;
+}
+.hero img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 4px solid white;
+  box-shadow: var(--shadow);
+  animation: zoomIn 1.2s ease;
+}
+@keyframes zoomIn {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.hero h2 { font-size: 32px; margin-bottom: 10px; animation: slideUp 1s ease forwards; }
+.hero p { font-size: 18px; margin-bottom: 30px; animation: fadeIn 1.4s ease forwards; }
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.buttons a {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.3s;
+}
+.buttons a:hover {
+  background: #0e78d8;
+  transform: scale(1.05);
+}
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow);
+  transition: background 0.3s, transform 0.3s;
+  animation: fadeIn 1s ease forwards;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+body.dark .card { background: #2a2e36; }
+h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+body.dark h3 { color: var(--accent); }
+ul li { margin-bottom: 10px; }
+footer {
+  text-align: center;
+  background: var(--primary);
+  color: white;
+  padding: 30px;
+  margin-top: 40px;
+}
+a { color: var(--accent); }
+@media (max-width: 768px) {
+  header h1 { width: 100%; margin-bottom: 10px; text-align: center; }
+  nav { justify-content: center; gap: 8px; }
+  .hero h2 { font-size: 24px; }
+  .hero p { font-size: 16px; }
+}
+
   </style>
 </head>
 <body><header>
@@ -160,12 +180,12 @@
     <a href="https://drive.google.com/file/d/1iB9tvCzub0c6pT5gw6S6UHIV6TwjTjdN/view?usp=drivesdk" target="_blank">Download CV</a>
     <a href="mailto:bagusardian5115@gmail.com">Kirim Email</a>
   </div>
-</section><section id="tentang">
+</section><section id="tentang" class="fade-in">
   <div class="card">
     <h3>Tentang Saya</h3>
     <p>Saya lahir di Semarang pada tanggal 5 November 2005. Lulusan SMA Negeri 10 Semarang jurusan IPS (2024). Memiliki pengalaman sebagai Sales dan Driver, terbiasa bekerja di lapangan, komunikatif, dan disiplin.</p>
   </div>
-</section><section id="pengalaman">
+</section><section id="pengalaman" class="fade-in">
   <div class="card">
     <h3>Pengalaman Kerja</h3>
     <ul>
@@ -173,7 +193,7 @@
       <li><strong>2023:</strong> Driver ShopeeFood - Mitra Shopee (Pengiriman makanan & minuman)</li>
     </ul>
   </div>
-</section><section id="kemampuan">
+</section><section id="kemampuan" class="fade-in">
   <div class="card">
     <h3>Kemampuan</h3>
     <ul>
@@ -183,7 +203,7 @@
       <li>Mampu bekerja secara tim maupun individu</li>
     </ul>
   </div>
-</section><section id="kontak">
+</section><section id="kontak" class="fade-in">
   <div class="card">
     <h3>Kontak</h3>
     <p>Alamat: KP. Ngablak RT 9 RW 4, Kel. Bangetayu Kulon, Kec. Genuk, Kota Semarang</p>
